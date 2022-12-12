@@ -1,17 +1,25 @@
 import React, { ReactElement } from 'react';
 
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
+import DetailsScreen from 'screens/DetailsScreen';
 import HomeScreen from 'screens/HomeScreen';
 
-const Stack = createNativeStackNavigator();
+import { RootStackParamList } from 'models/Screens';
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 // Компонент AppNavigator
 const AppNavigator = (): ReactElement => (
   <NavigationContainer>
-    <Stack.Navigator>
+    <Stack.Navigator initialRouteName='Home'
+                     screenOptions={{
+                       headerTitleAlign: 'center',
+                       cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
+                     }}>
       <Stack.Screen name='Home' component={HomeScreen} />
+      <Stack.Screen name='Details' component={DetailsScreen} />
     </Stack.Navigator>
   </NavigationContainer>
 );
