@@ -110,6 +110,7 @@ module.exports = {
     'comma-dangle': ['error', 'never'], // запрещает запятые в конце
     '@typescript-eslint/comma-dangle': ['error', 'never'], // запрещает запятые в конце с поддержкой синтаксиса TypeScript
     'operator-linebreak': ['error', 'after'], // требует переноса строки после оператора
-    'linebreak-style': 0 // отключает правило применения согласованного стиля разрыва строки
+    'linebreak-style': 0, // отключает правило применения согласованного стиля разрыва строки
+    "@typescript-eslint/indent": 0 // отключает правило, требующие писать обобщенный тип в одну строку
   }
 };
